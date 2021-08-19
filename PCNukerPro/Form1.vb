@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Security.AccessControl
 Imports System.Timers
 Imports Timer = System.Timers.Timer
 Public Class Form1
@@ -16,6 +17,11 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
         loadPCInfo()
+
+        If registryExist() = False Then
+            createRegistry()
+        End If
+        loadRegistryValues()
     End Sub
 
     Private Sub cleanbutton_Click(sender As Object, e As EventArgs) Handles cleanbutton.Click
@@ -128,6 +134,44 @@ Public Class Form1
         stopAntiRansomware()
     End Sub
 
+    Private Sub removevault_Click(sender As Object, e As EventArgs) Handles removevault.Click
+        If vaultlistbox.SelectedItem Is Nothing Then
+        Else
+            deleteRegistryValues(vaultlistbox.SelectedItem.ToString)
+            vaultlistbox.Items.Remove(vaultlistbox.SelectedItem)
+        End If
+    End Sub
+
+    Private Sub addvault_Click(sender As Object, e As EventArgs) Handles addvault.Click
+        Dim browser As New FolderBrowserDialog
+        If (browser.ShowDialog() = DialogResult.OK) Then
+            createRegistryValues(browser.SelectedPath)
+            vaultlistbox.Items.Add(browser.SelectedPath)
+        End If
+    End Sub
+    Private Sub lockvault_Click(sender As Object, e As EventArgs) Handles lockvault.Click
+        lockVaultSub()
+    End Sub
+
+    Private Sub lockVaultSub()
+        For Each folder As String In vaultlistbox.Items
+            Dim FSS As FileSystemSecurity = File.GetAccessControl(folder)
+            FSS.AddAccessRule(New FileSystemAccessRule(Environment.UserName, FileSystemRights.FullControl, AccessControlType.Deny))
+            File.SetAccessControl(folder, FSS)
+            AddItem2Listbox(folder & " - Locked")
+        Next
+    End Sub
+
+    Private Sub unlockvault_Click(sender As Object, e As EventArgs) Handles unlockvault.Click
+        For Each folder As String In vaultlistbox.Items
+            Dim FSS As FileSystemSecurity = File.GetAccessControl(folder)
+            FSS.RemoveAccessRule(New FileSystemAccessRule(Environment.UserName, FileSystemRights.FullControl, AccessControlType.Deny))
+            File.SetAccessControl(folder, FSS)
+            AddItem2Listbox(folder & " - Unlocked")
+        Next
+    End Sub
+
+#Region "AntiRansomware"
     Public Sub startAntiRansomware()
         If Not My.Computer.FileSystem.DirectoryExists(path) Then
             My.Computer.FileSystem.CreateDirectory(path)
@@ -193,13 +237,15 @@ Public Class Form1
         End If
 
         If setvaultscheckbox.Checked = True Then
-
+            lockVaultSub()
         End If
 
         If shutdowncheckbox.Checked = True Then
-
+            Shell("shutdown -s -t 00")
         End If
 
     End Sub
+
+#End Region
 End Class
 

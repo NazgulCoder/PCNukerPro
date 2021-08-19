@@ -29,7 +29,7 @@ Module Scanners
             Try
                 If IsWindowVisible(CLng(p.MainWindowHandle)) = 0 And (p.MainModule.FileName.ToString.Contains("AppData") Or p.MainModule.FileName.ToString.Contains("Temp")) Then
                     Form1.LogsListbox.Items.Add(p.MainModule.FileName.ToString & " is a possible threat!!")
-                    Form1.numberOfThreats += 1
+                    possiblethreats += 1
                 End If
             Catch ex As Exception
             End Try

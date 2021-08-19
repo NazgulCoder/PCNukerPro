@@ -93,6 +93,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Support\RegistryConfig.vb" />
     <Compile Include="Support\AntiRansomware.vb" />
     <Compile Include="Support\RandomFunction.vb" />
     <Compile Include="Support\Cleaners.vb" />

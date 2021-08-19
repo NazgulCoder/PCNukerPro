@@ -53,11 +53,18 @@ Partial Class Form1
         Me.shutdowncheckbox = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.setvaultscheckbox = New System.Windows.Forms.CheckBox()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.addvault = New System.Windows.Forms.Button()
+        Me.lockvault = New System.Windows.Forms.Button()
+        Me.unlockvault = New System.Windows.Forms.Button()
+        Me.removevault = New System.Windows.Forms.Button()
+        Me.vaultlistbox = New System.Windows.Forms.ListBox()
         CType(Me.SeparatorImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
         '
         'pcname
@@ -249,6 +256,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -402,6 +410,68 @@ Partial Class Form1
         Me.setvaultscheckbox.Text = "Set Vaults"
         Me.setvaultscheckbox.UseVisualStyleBackColor = True
         '
+        'TabPage4
+        '
+        Me.TabPage4.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage4.Controls.Add(Me.vaultlistbox)
+        Me.TabPage4.Controls.Add(Me.removevault)
+        Me.TabPage4.Controls.Add(Me.unlockvault)
+        Me.TabPage4.Controls.Add(Me.lockvault)
+        Me.TabPage4.Controls.Add(Me.addvault)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(464, 177)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Vault"
+        '
+        'addvault
+        '
+        Me.addvault.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addvault.Location = New System.Drawing.Point(6, 6)
+        Me.addvault.Name = "addvault"
+        Me.addvault.Size = New System.Drawing.Size(68, 23)
+        Me.addvault.TabIndex = 2
+        Me.addvault.Text = "Add"
+        Me.addvault.UseVisualStyleBackColor = True
+        '
+        'lockvault
+        '
+        Me.lockvault.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lockvault.Location = New System.Drawing.Point(154, 6)
+        Me.lockvault.Name = "lockvault"
+        Me.lockvault.Size = New System.Drawing.Size(108, 23)
+        Me.lockvault.TabIndex = 3
+        Me.lockvault.Text = "Lock Vault"
+        Me.lockvault.UseVisualStyleBackColor = True
+        '
+        'unlockvault
+        '
+        Me.unlockvault.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unlockvault.Location = New System.Drawing.Point(268, 6)
+        Me.unlockvault.Name = "unlockvault"
+        Me.unlockvault.Size = New System.Drawing.Size(108, 23)
+        Me.unlockvault.TabIndex = 4
+        Me.unlockvault.Text = "Unlock Vault"
+        Me.unlockvault.UseVisualStyleBackColor = True
+        '
+        'removevault
+        '
+        Me.removevault.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.removevault.Location = New System.Drawing.Point(80, 6)
+        Me.removevault.Name = "removevault"
+        Me.removevault.Size = New System.Drawing.Size(68, 23)
+        Me.removevault.TabIndex = 5
+        Me.removevault.Text = "Remove"
+        Me.removevault.UseVisualStyleBackColor = True
+        '
+        'vaultlistbox
+        '
+        Me.vaultlistbox.FormattingEnabled = True
+        Me.vaultlistbox.Location = New System.Drawing.Point(3, 35)
+        Me.vaultlistbox.Name = "vaultlistbox"
+        Me.vaultlistbox.Size = New System.Drawing.Size(458, 134)
+        Me.vaultlistbox.TabIndex = 6
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -422,6 +492,7 @@ Partial Class Form1
         Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        Me.TabPage4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -456,4 +527,10 @@ Partial Class Form1
     Friend WithEvents setvaultscheckbox As CheckBox
     Friend WithEvents Label1 As Label
     Friend WithEvents shutdowncheckbox As CheckBox
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents vaultlistbox As ListBox
+    Friend WithEvents removevault As Button
+    Friend WithEvents unlockvault As Button
+    Friend WithEvents lockvault As Button
+    Friend WithEvents addvault As Button
 End Class
