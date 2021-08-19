@@ -1,6 +1,16 @@
 ﻿Imports System.Security.Principal
 
 Module Info
+    Public Sub loadPCInfo()
+        Dim strHostName As String = System.Net.Dns.GetHostName()
+        Form1.pcname.Text = "PC Name: " & strHostName
+        Dim Info As Object = GetInfo.ToString.Split("|")
+        Form1.os.Text = "OS: " & Info(1)
+        Form1.ram.Text = "RAM: " & Info(0)
+        Form1.admin.Text = "Administrator: " & Info(3)
+        Form1.processor.Text = Info(2)
+        Form1.hddspace.Text = "HardDisk Space: " & Info(4) & "GB/" & Info(5) & "GB"
+    End Sub
     Public Function GetInfo()
         Dim Ram As Double = My.Computer.Info.TotalPhysicalMemory / (1024 ^ 3)
         Dim FRam As String = Ram.ToString("N") & " GB"

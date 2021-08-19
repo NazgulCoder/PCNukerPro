@@ -43,13 +43,21 @@ Partial Class Form1
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.quickscanbutton = New System.Windows.Forms.Button()
-        Me.startupscanbutton = New System.Windows.Forms.Button()
         Me.antimalwarelabel = New System.Windows.Forms.Label()
+        Me.startupscanbutton = New System.Windows.Forms.Button()
+        Me.quickscanbutton = New System.Windows.Forms.Button()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.stopransomware = New System.Windows.Forms.Button()
+        Me.startransomware = New System.Windows.Forms.Button()
+        Me.ransomware = New System.Windows.Forms.Label()
+        Me.shutdowncheckbox = New System.Windows.Forms.CheckBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.setvaultscheckbox = New System.Windows.Forms.CheckBox()
         CType(Me.SeparatorImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'pcname
@@ -240,6 +248,7 @@ Partial Class Form1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -285,15 +294,15 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Malware"
         '
-        'quickscanbutton
+        'antimalwarelabel
         '
-        Me.quickscanbutton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.quickscanbutton.Location = New System.Drawing.Point(6, 6)
-        Me.quickscanbutton.Name = "quickscanbutton"
-        Me.quickscanbutton.Size = New System.Drawing.Size(107, 23)
-        Me.quickscanbutton.TabIndex = 19
-        Me.quickscanbutton.Text = "Malware Scan"
-        Me.quickscanbutton.UseVisualStyleBackColor = True
+        Me.antimalwarelabel.AutoSize = True
+        Me.antimalwarelabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.antimalwarelabel.Location = New System.Drawing.Point(3, 30)
+        Me.antimalwarelabel.Name = "antimalwarelabel"
+        Me.antimalwarelabel.Size = New System.Drawing.Size(449, 144)
+        Me.antimalwarelabel.TabIndex = 21
+        Me.antimalwarelabel.Text = resources.GetString("antimalwarelabel.Text")
         '
         'startupscanbutton
         '
@@ -305,15 +314,93 @@ Partial Class Form1
         Me.startupscanbutton.Text = "Startup Scan"
         Me.startupscanbutton.UseVisualStyleBackColor = True
         '
-        'antimalwarelabel
+        'quickscanbutton
         '
-        Me.antimalwarelabel.AutoSize = True
-        Me.antimalwarelabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.antimalwarelabel.Location = New System.Drawing.Point(3, 30)
-        Me.antimalwarelabel.Name = "antimalwarelabel"
-        Me.antimalwarelabel.Size = New System.Drawing.Size(449, 144)
-        Me.antimalwarelabel.TabIndex = 21
-        Me.antimalwarelabel.Text = resources.GetString("antimalwarelabel.Text")
+        Me.quickscanbutton.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.quickscanbutton.Location = New System.Drawing.Point(6, 6)
+        Me.quickscanbutton.Name = "quickscanbutton"
+        Me.quickscanbutton.Size = New System.Drawing.Size(107, 23)
+        Me.quickscanbutton.TabIndex = 19
+        Me.quickscanbutton.Text = "Malware Scan"
+        Me.quickscanbutton.UseVisualStyleBackColor = True
+        '
+        'TabPage3
+        '
+        Me.TabPage3.BackColor = System.Drawing.Color.Transparent
+        Me.TabPage3.Controls.Add(Me.setvaultscheckbox)
+        Me.TabPage3.Controls.Add(Me.Label1)
+        Me.TabPage3.Controls.Add(Me.shutdowncheckbox)
+        Me.TabPage3.Controls.Add(Me.stopransomware)
+        Me.TabPage3.Controls.Add(Me.startransomware)
+        Me.TabPage3.Controls.Add(Me.ransomware)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(464, 177)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Ransomware"
+        '
+        'stopransomware
+        '
+        Me.stopransomware.Enabled = False
+        Me.stopransomware.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.stopransomware.Location = New System.Drawing.Point(168, 6)
+        Me.stopransomware.Name = "stopransomware"
+        Me.stopransomware.Size = New System.Drawing.Size(156, 23)
+        Me.stopransomware.TabIndex = 2
+        Me.stopransomware.Text = "Stop Anti-Ransomware"
+        Me.stopransomware.UseVisualStyleBackColor = True
+        '
+        'startransomware
+        '
+        Me.startransomware.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.startransomware.Location = New System.Drawing.Point(6, 6)
+        Me.startransomware.Name = "startransomware"
+        Me.startransomware.Size = New System.Drawing.Size(156, 23)
+        Me.startransomware.TabIndex = 1
+        Me.startransomware.Text = "Start Anti-Ransomware"
+        Me.startransomware.UseVisualStyleBackColor = True
+        '
+        'ransomware
+        '
+        Me.ransomware.AutoSize = True
+        Me.ransomware.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ransomware.Location = New System.Drawing.Point(3, 32)
+        Me.ransomware.Name = "ransomware"
+        Me.ransomware.Size = New System.Drawing.Size(160, 16)
+        Me.ransomware.TabIndex = 0
+        Me.ransomware.Text = "Ransomware Status: OFF"
+        '
+        'shutdowncheckbox
+        '
+        Me.shutdowncheckbox.AutoSize = True
+        Me.shutdowncheckbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.shutdowncheckbox.Location = New System.Drawing.Point(6, 76)
+        Me.shutdowncheckbox.Name = "shutdowncheckbox"
+        Me.shutdowncheckbox.Size = New System.Drawing.Size(106, 20)
+        Me.shutdowncheckbox.TabIndex = 8
+        Me.shutdowncheckbox.Text = "Shutdown PC"
+        Me.shutdowncheckbox.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 57)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(242, 16)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "If Ransomware Activity is detected then:"
+        '
+        'setvaultscheckbox
+        '
+        Me.setvaultscheckbox.AutoSize = True
+        Me.setvaultscheckbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.setvaultscheckbox.Location = New System.Drawing.Point(118, 76)
+        Me.setvaultscheckbox.Name = "setvaultscheckbox"
+        Me.setvaultscheckbox.Size = New System.Drawing.Size(87, 20)
+        Me.setvaultscheckbox.TabIndex = 10
+        Me.setvaultscheckbox.Text = "Set Vaults"
+        Me.setvaultscheckbox.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -333,6 +420,8 @@ Partial Class Form1
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -360,4 +449,11 @@ Partial Class Form1
     Friend WithEvents quickscanbutton As Button
     Friend WithEvents antimalwarelabel As Label
     Friend WithEvents startupscanbutton As Button
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents stopransomware As Button
+    Friend WithEvents startransomware As Button
+    Friend WithEvents ransomware As Label
+    Friend WithEvents setvaultscheckbox As CheckBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents shutdowncheckbox As CheckBox
 End Class
