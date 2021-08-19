@@ -1,0 +1,125 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PCNukerPro
+</name>
+</assembly>
+<members>
+<member name="T:PCNukerPro.My.Resources.Resources">
+<summary>
+  Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
+</summary>
+</member>
+<member name="P:PCNukerPro.My.Resources.Resources.ResourceManager">
+<summary>
+  Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+</summary>
+</member>
+<member name="P:PCNukerPro.My.Resources.Resources.Culture">
+<summary>
+  Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte le
+  ricerche di risorse eseguite utilizzando questa classe di risorse fortemente tipizzata.
+</summary>
+</member>
+<member name="P:PCNukerPro.My.Resources.Resources.englishwords">
+<summary>
+  Cerca una stringa localizzata simile a the
+of
+to
+and
+in
+is
+it
+you
+that
+he
+was
+for
+on
+are
+with
+as
+his
+they
+be
+at
+one
+have
+this
+from
+or
+had
+by
+hot
+word
+but
+what
+some
+we
+can
+out
+other
+were
+all
+there
+when
+up
+use
+your
+how
+said
+an
+each
+she
+which
+do
+their
+time
+if
+will
+way
+about
+many
+then
+them
+write
+would
+like
+so
+these
+her
+long
+make
+thing
+see
+him
+two
+has
+look
+more
+day
+could
+go
+come
+did
+number
+sound
+no
+most
+people
+my
+over
+know
+water
+than
+call
+first
+who
+may
+side
+ [stringa troncata]&quot;;.
+</summary>
+</member>
+</members>
+</doc>
