@@ -1,5 +1,5 @@
 # PCNukerPro
- simple standalone cleaning and antimalware utility
+ simple standalone cleaning and antimalware utility, not meant to replace AV role, however some IT Supervisors or Managers may find this useful to implement in their systems. Feel free to learn, copy and paste, improve the Proof of Concept shown below.
  
  ### Features
  -Cleaner <br/>
