@@ -589,6 +589,13 @@ Startup Scan will automatically check whether in your startup applications
 there are some suspicious entries. You will still have then to remove them 
 manually or with the help of an Antivirus.</value>
   </data>
+  <data name="ransomwaredescriptions.Text" xml:space="preserve">
+    <value>Make sure you config the vault. PCNukerPro will try to protect your folders
+from reading and writing if a suspicious activity is detected. It's always
+recommended not to turn on the PC when a ransomware flag is being raised
+and to analyze the drive from another Computer (RescueDisk, SysRescue)
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIAClggEAZgAAAICAAAABACAAKAgBAAuDAQBAQAAAAQAgAChCAAAziwIAMDAAAAEA
