@@ -2,14 +2,14 @@
  simple standalone cleaning and antimalware utility
  
  ### Features
- -Cleaner
- -FileSystem and DiskChecking Helper
- -AntiMalware (RunTime & Startup)
- -AntiRansomware (Proof of Concept) with Automatic Shutdown
- -Vault (System Lock Folders)
+ -Cleaner <br/>
+ -FileSystem and DiskChecking Helper <br/>
+ -AntiMalware (RunTime & Startup) <br/>
+ -AntiRansomware (Proof of Concept) with Automatic Shutdown <br/>
+ -Vault (System Lock Folders) <br/>
  
  ### Planned Features
- -Startup
- -Install as Windows Service
- -User lockout after Ransomware Activity
- -User lockout after Ransomware Activity integrated with ActiveDirectory
+ -Startup <br/>
+ -Install as Windows Service <br/>
+ -User lockout after Ransomware Activity <br/>
+ -User lockout after Ransomware Activity integrated with ActiveDirectory <br/>
